@@ -1,4 +1,12 @@
-# Solution
+# Content
+
+- [Content](#content)
+  - [Environment](#environment)
+  - [Solution](#solution)
+    - [Usage](#usage)
+    - [Build](#build)
+    - [Running the program](#running-the-program)
+      - [Reading from a file](#reading-from-a-file)
 
 ## Environment
 
@@ -10,7 +18,9 @@ Go: go version go1.20.4 linux/amd64
 
 Docker: Docker version 23.0.6, build ef23cbc431(client) 9dbdbd4b6d(server)
 
-## Usage
+## Solution
+
+### Usage
 
 The program receives two parameters
 
@@ -26,7 +36,7 @@ Assumptions
 
 The program can receive repeated numbers, but, this can lead to an output with repeated pairs.
 
-## Build
+### Build
 
 We can build the program using
 
@@ -40,7 +50,19 @@ Or, using docker
 docker run --rm -v "$PWD":/app -w /app golang:1.20 go build .
 ```
 
-## Running the program
+Another option to get the binary without downloading this repository directly
+
+```bash
+go install -v github.com/RichardAlmanza/other-challenges/macheight/app@latest
+```
+
+Using Docker
+
+```bash
+docker run --rm -v "$PWD":/go/bin golang:1.20 go install github.com/RichardAlmanza/other-challenges/macheight/app@latest
+```
+
+### Running the program
 
 Also, Go can Build and run a temporal binary
 
@@ -60,7 +82,7 @@ Using the binary compiled from the build stage
 ./app 1,9,5,0,20,-4,12,16,7 12
 ```
 
-### Reading from a file
+#### Reading from a file
 
 Given a file, where each line has the two parameters separated by space
 
